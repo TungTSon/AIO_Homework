@@ -1,8 +1,10 @@
 def md_nre_single_sample (y=0, y_hat=0, n=2, p=1):
-    return print((y**(1/n) - y_hat**(1/n))**p)
+    y, y_hat, n, p = float(y), float(y_hat), int(n), int(p)   # casting all inputs from string to numbers
+    return print(">>",(y**(1/n) - y_hat**(1/n))**p)
 
 if __name__ == '__main__':
-    md_nre_single_sample(y=100, y_hat=99.5, n=2, p=1)
-    md_nre_single_sample(y=50, y_hat=49.5, n=2, p=1)
-    md_nre_single_sample(y=20, y_hat=19.5, n=2, p=1)
-    md_nre_single_sample(y=0.6, y_hat=0.1, n=2, p=1)
+    y = input("Enter y = ")
+    y_hat = input("Enter y_hat = ")
+    n = input("Enter n_th order root = ")
+    p = input("Enter order of the loss, p = ")
+    md_nre_single_sample(y=y, y_hat=y_hat, n=n, p=p)    # show result
