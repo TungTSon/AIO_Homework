@@ -1,6 +1,6 @@
-def md_nre_single_sample (y=0, y_hat=0, n=2, p=1):
+def md_nre_single_sample(y=0, y_hat=0, n=2, p=1):
     y, y_hat, n, p = float(y), float(y_hat), int(n), int(p)   # casting all inputs from string to numbers
-    return print(">>",(y**(1/n) - y_hat**(1/n))**p)
+    return print(">>",(y ** (1/n) - y_hat ** (1/n)) ** p)
 
 if __name__ == '__main__':
     y = input("Enter y = ")
