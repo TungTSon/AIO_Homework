@@ -2,6 +2,7 @@ import random
 import numpy as np
 import math
 
+
 def output_generate(n_sample):  # this function is to generate random values for y and y_pred
     y_target = np.array([random.uniform(0, 10) for _ in range(n_sample)])
     y_predict = np.array([random.uniform(0, 10) for _ in range(n_sample)])
@@ -13,10 +14,10 @@ def loss_calcultion(loss_type, y_target, y_predict):    # compute the loss, base
         loss = np.abs(y_predict - y_target)
         total_loss = np.mean(loss)
     elif(loss_type == 'MSE' or loss_type == 'mse'):
-        loss = [(p - t)**2 for p, t in zip(y_target, y_predict)]
+        loss = [(p - t) ** 2 for p, t in zip(y_target, y_predict)]
         total_loss = sum(loss)/len(loss)
     elif (loss_type == 'RMSE' or loss_type == 'rmse'):
-        loss = [(p - t)**2 for p, t in zip(y_target, y_predict)]
+        loss = [(p - t) ** 2 for p, t in zip(y_target, y_predict)]
         total_loss = math.sqrt(sum(loss)/len(loss))
     return loss, total_loss
 
@@ -24,8 +25,8 @@ def loss_calcultion(loss_type, y_target, y_predict):    # compute the loss, base
 def n_sample_and_Loss_input():
     n_sample = input("Enter number of samples: ")
     if n_sample.isnumeric():  # check if number of sample is numeric, if not end the program
-        y_target, y_predict = output_generate(
-            int(n_sample))  # generate random values of target and predicted output value
+        y_target, y_predict = output_generate(int(n_sample))  # generate random values of target and predicted output value
+        # Prompt user to input the loss type
         loss_type = input("Enter the loss type (MAE/MSE/RMSE): ")
         loss, total_loss = loss_calcultion(loss_type, y_target, y_predict)
 

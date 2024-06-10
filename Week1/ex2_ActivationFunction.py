@@ -12,7 +12,7 @@ def is_number(n):
 
 def ex2_ActivationFunction():
     x = input("Input x = ")
-    if (is_number(x)):
+    if is_number(x):
         actfunc = input("Input activation Function (sigmoid | relu |elu): ")
         print(activation_function(actfunc, float(x)))
     else:
