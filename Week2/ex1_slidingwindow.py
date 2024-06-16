@@ -14,7 +14,7 @@ def max_in_window_list(input_list, k):
     return output_list
 
 
-def prompt_user_input():
+def user_input():
     k = input("Enter the size of sliding window list, k = ")
     if not k.isnumeric() or int(k) < 1:
         print("k must be a positive integer")
@@ -24,6 +24,6 @@ def prompt_user_input():
 
 if __name__ == "__main__":
     input_list = list_generate(10)
-    k = prompt_user_input()
+    k = user_input()
     print(">> input num_list =", input_list)
     print(">> Output:", max_in_window_list(input_list, k))
