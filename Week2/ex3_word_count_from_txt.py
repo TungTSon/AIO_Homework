@@ -1,7 +1,7 @@
 def word_count(file_path):
     # Read the file
-    with open(file_path, 'r') as f:
-        text = f.read()
+    with open(file_path, 'r') as file:
+        text = file.read()
 
     # Convert all split words to lowercase
     word_list = [word.lower() for word in text.split()]
