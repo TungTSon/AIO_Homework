@@ -1,4 +1,4 @@
-def calculate_levenshtein_distance(source, target):
+def compute_levenshtein_distance(source, target):
     m, n = len(source), len(target)
 
     if m == 0:
@@ -24,13 +24,13 @@ def calculate_levenshtein_distance(source, target):
     return prev_row[n]
 
 
-# Test cases
-assert calculate_levenshtein_distance("kitten", "sitting") == 3
-assert calculate_levenshtein_distance("yu", "you") == 1
+# Test cases: check if any error
+assert compute_levenshtein_distance("kitten", "sitting") == 3
+assert compute_levenshtein_distance("yu", "you") == 1
 
 
 if __name__ == "__main__":
     str_source = "yu"
     str_target = "you"
     print(f"Levenshtein distance between {str_source} and {str_target} is",
-          calculate_levenshtein_distance(str_source, str_target))
+          compute_levenshtein_distance(str_source, str_target))
